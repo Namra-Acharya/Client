@@ -1,0 +1,143 @@
+/* Minimal Modern Sidebar Styles */
+.sidebar {
+  height: 100vh;
+  width: 200px;
+  background: var(--color-sidebar-bg);
+  color: var(--color-text-sidebar);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--color-border);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  z-index: 99;
+  box-shadow: var(--color-shadow);
+}
+
+.brand {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.menu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px 0 0 0;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 24px;
+  border-radius: 8px;
+  color: var(--color-text-sidebar);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+  position: relative;
+}
+.menu-link:hover, .menu-link.active {
+  background: rgba(99,102,241,0.08);
+  color: var(--color-primary);
+  font-weight: 700;
+  box-shadow: 0 2px 8px 0 var(--color-primary)22;
+  transform: scale(1.03);
+}
+.menu-icon {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+}
+.active-indicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 28px;
+  border-radius: 2px;
+  background: var(--color-primary);
+  box-shadow: 0 0 8px var(--color-primary);
+  transition: all var(--transition);
+}
+.menu-label {
+  font-size: 1.05rem;
+  color: var(--color-text-sidebar);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 20px 24px;
+  font-size: 0.95rem;
+  color: var(--color-text-sidebar);
+  border-top: 1px solid var(--color-border);
+}
+.logout-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--color-text-sidebar);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 4px;
+  transition: color var(--transition);
+}
+.logout-btn:hover {
+  color: var(--color-primary);
+}
+.version-info {
+  font-size: 0.85rem;
+  color: var(--color-text-sidebar);
+  opacity: 0.7;
+  margin-left: 2px;
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 56px;
+    min-width: 56px;
+  }
+  .brand {
+    font-size: 1rem;
+    height: 56px;
+  }
+  .menu-link {
+    padding: 8px 10px;
+    gap: 0;
+    justify-content: center;
+  }
+  .menu-label {
+    display: none;
+  }
+  .footer {
+    padding: 10px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .sidebar {
+    display: none;
+  }
+} 
